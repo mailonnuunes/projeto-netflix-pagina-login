@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id="gradiente-superior"></div>
+        <img src="./img/netflix-logo2.png" alt="netflix-logo" id="netflix-logo">
+    </header>
+    <main>
+        <div class="container-para-box-login">
+            <div id="box-login">
+                <div id="box-login-interna1">
+                <h2>Entrar</h2>
+                <p class="texto-em-cima-da-caixa 01 off">Email ou número de telefone</p>
+                <input onblur="perdaDeFocoUsuario()" onclick="ligaDesligaCampoUsuario()" type="text" class="camposLogin usuario" placeholder="Email ou número de telefone" >
+                <p class="texto-em-cima-da-caixa 02 off">Email ou número de telefone</p>
+                <input onblur="perdaDeFocoSenha()" onclick="ligaDesligaCampoSenha()" type="text" class="camposLogin senha" placeholder="Senha" >
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+    </footer>
+    <script>
+        const textoUsername = document.getElementsByClassName("01");
+        const textoSenha = document.getElementsByClassName("02");
+        const usuario = document.getElementsByClassName("usuario")
+        const senha = document.getElementsByClassName("senha")
+        
+        function ligaDesligaCampoUsuario() {
+            if (textoUsername[0].classList.contains("off")) {
+                textoUsername[0].classList.remove("off")
+                usuario[0].placeholder=" ";
+            }else{
+                textoUsername[0].classList.add("off")
+                usuario[0].placeholder="Email ou número de telefone";
+            }
+        }
+        function ligaDesligaCampoSenha() {
+            if (textoSenha[0].classList.contains("off")) {
+                textoSenha[0].classList.remove("off")
+                senha[0].placeholder=" ";
+            }else{
+                textoSenha[0].classList.add("off")
+                senha[0].placeholder="Senha";
+            }
+        }
+        function perdaDeFocoSenha() {
+            textoSenha[0].classList.add("off")
+                senha[0].placeholder="Senha";
+        }
+        function perdaDeFocoUsuario() {
+            textoUsername[0].classList.add("off")
+                usuario[0].placeholder="Email ou número de telefone";
+        }
+    </script>
+</body>
+</html>
